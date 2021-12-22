@@ -1,0 +1,30 @@
+<div class="player-list row">
+    <div class="search-wrapper col-xs-12">
+        <input 
+            class="form-control search"
+            placeholder="Поиск..."
+            name="searchText"
+            ng-model="self.searchText"
+            ng-model-options="{debounce: 1000}"
+            ng-change="self.search()"
+        >
+        <button class="btn btn-inverse btn-add-player" type="button" ng-click="self.createPlayerModal()">
+            Добавить игрока
+        </button>
+    </div>
+    <div class="players">
+        <div class="col-xs-12 col-sm-6 col-lg-4" ng-model="self.players" ng-repeat="player in self.players track by player.id">
+            <a class="player card" ui-sref="player({id: player.id})">
+                <div class="card-body">
+                    <h4 class="card-title" ng-bind="player.nickname"></h4>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Возраст:</b> <span ng-bind="player.age"></span></li>
+                    <li class="list-group-item"><b>Телефон:</b> <span ng-bind="player.phone"></span></li>
+                    <li class="list-group-item"><b>Email:</b> <span ng-bind="player.email"></span></li>
+                    <li class="list-group-item"><b>Платформа:</b> <span ng-bind="player.platform"></span></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>

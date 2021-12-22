@@ -1,0 +1,35 @@
+.player-list {
+    .search-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 20px 0;
+        .search {
+            display: flex;
+            width: 100%;
+            max-width: 300px;
+            height: 40px;
+            color: var(--text-light);
+            background-color: transparent;
+            &:focus {
+                border-color: var(--background-light);
+            }
+        }
+    }
+    .player {
+        display: block;
+        padding: 20px 5px;
+        transition: 0.4s;
+        text-decoration: none;
+        color: var(--text-dark);
+        .card-title {
+            color: var(--text-light);
+        }
+        .list-group-item {
+            background-color: var(--background-light);
+        }
+    }
+    .player:hover {
+        transform: scale(1.1);
+    }
+}

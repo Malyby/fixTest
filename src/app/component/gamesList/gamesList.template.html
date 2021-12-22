@@ -1,0 +1,29 @@
+<div class="layout pt-5 pb-4">
+    <div class="games row pt-4 pb-4">
+        <div class="col-xs-12 col-sm-6 col-lg-4" ng-model="self.games" ng-repeat="game in self.games track by game.id">
+            <div class="game card my-2" ng-class="{not_available: checkDateRelease(game.date_release)}">
+                <div class="card-body">
+                    <h5 class="card-title m-0" ng-bind="game.name"></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" >
+                        <b>Жанр:</b>
+                        <span ng-bind="game.genre"></span>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Дата релиза:</b>
+                        <span ng-bind="game.date_release | date:'dd.MM.yyyy'"></span>
+                    </li>
+                    <li class="list-group-item" >
+                        <b>Платформа:</b>
+                        <span ng-bind="game.platform"></span>
+                    </li>
+                    <li class="list-group-item" >
+                        <b>Возрастной рейтинг:</b>
+                        <span ng-bind="game.rating"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

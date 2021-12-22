@@ -1,0 +1,52 @@
+<div id="formAddGame">
+  <form name="formAddGame" ng-submit="self.addGame()">
+    <div class="modal-content" ng-if="!formAddGame.$submitted">
+      <div class="modal-header">
+        <h3 class="modal-title">Добавлени Игры</h3>
+        <button type="button" class="btn" ng-click="self.closeModal('cancel')">Закрыть</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <select 
+            class="form-select" 
+            name="game"
+            required
+            ng-model="self.game"
+            ng-options="game.name for game in self.games track by game.id"
+            ng-class="{'is-invalid': formAddGame.game.$error.required && formAddGame.game.$touched}"
+          >
+            <option value="" disabled>Выбрать игру</option>
+          </select>
+          <span class="invalid-feedback" ng-show="formAddGame.game.$error.required && formAddGame.game.$touched">
+            Обязательное поле
+          </span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button 
+          type="submit"
+          class="btn btn-primary"
+          ng-disabled="formAddGame.$invalid || formAddGame.$pending"
+        >Добавить</button>
+      </div>
+    </div>
+
+    <div class="modal-content" ng-if="formAddGame.$submitted">
+      <div class="modal-header">
+        <h3 class="modal-title">Игра Добавлена!</h3>
+      </div>
+      <div class="modal-body text-center">
+        <img src="/assets/icon/success.svg" alt="success">
+      </div>
+      <div class="modal-footer">
+        <button 
+          type="button"
+          class="btn btn-primary"
+          ng-click="self.closeModal('success')"
+        >
+          Хорошо!
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

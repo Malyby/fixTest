@@ -1,0 +1,56 @@
+<div id="formDeletePlayer">
+  <form class="modal-content needs-validation" name="formDeletePlayer" ng-submit="self.deletePlayer()" ng-show="!formDeletePlayer.$submitted">
+    <div class="modal-header">
+      <h3 class="modal-title">Удаление</h3>
+      <button type="button" class="btn" ng-click="self.closeModal('cancel')">Закрыть</button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <label for="nickname">Введите имя игрока <b ng-bind="self.player.nickname"></b> для удаления</label>
+        <input 
+          type="text"
+          name="nickname"
+          class="form-control"
+          placeholder="Имя игрока"
+          required
+          ng-model="self.nickname"
+          ng-class="{'is-invalid': (formDeletePlayer.nickname.$error.required || formDeletePlayer.nickname.$error.checkEqualNickname) && formDeletePlayer.nickname.$touched}"
+          validate-equal-nickname="{{self.player.nickname}}"
+        >
+        <span class="invalid-feedback" ng-show="formDeletePlayer.nickname.$error.required && formDeletePlayer.nickname.$touched">
+          Обязательное поле
+        </span>
+        <span class="invalid-feedback" ng-show="formDeletePlayer.nickname.$error.checkEqualNickname && formDeletePlayer.nickname.$touched">
+          Имя не совпадает
+        </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button 
+        type="submit"
+        class="btn"
+        ng-disabled="formDeletePlayer.$invalid || formDeletePlayer.$pending"
+      >
+        Удалить
+      </button>
+    </div>
+  </form>
+  <!--Состояние успеха-->
+  <div class="modal-content" ng-show="formDeletePlayer.$submitted">
+    <div class="modal-header">
+      <h3 class="modal-title">Игрок Удален</h3>
+    </div>
+    <div class="modal-body text-center">
+      <img src="/assets/icon/success.svg" alt="success">
+    </div>
+    <div class="modal-footer">
+      <button 
+        type="button"
+        class="btn btn-primary"
+        ng-click="self.closeModal('success')"
+      >
+        Ок
+      </button>
+    </div>
+  </div>
+</div>

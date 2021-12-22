@@ -1,0 +1,17 @@
+player {
+    .player {
+        top: 10px;
+    }
+    .games {
+        .card-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .add_game {
+                display: flex;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+        }
+    }
+}

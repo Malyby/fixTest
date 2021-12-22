@@ -1,0 +1,37 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./app/component/createPlayer/createPlayer.scss";
+@import "./app/component/editPlayer/editPlayer.scss";
+@import "./app/component/gamesList/gamesList.scss";
+@import "./app/component/general/general.scss";
+@import "./app/component/mainMenu/mainMenu.scss";
+@import "./app/component/player/player.scss";
+@import "./app/component/playersList/playersList.scss";
+:root {
+    --background-dark: #000;
+    --background-light: #fff;
+    --text-dark: #000;
+    --text-light: #fff;
+}
+body {
+    overflow-x: hidden;
+    margin: 20px;
+    .btn-link {
+        color: #212529!important;
+
+    }
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &::after, &::before {
+        display: none;
+    }
+}
+.btn:not(.btn-link) {
+    outline: none;
+    border: none;
+    color: var(--text-light);
+    background-color: var(--background-dark);
+    
+}

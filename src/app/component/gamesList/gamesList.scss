@@ -1,0 +1,13 @@
+games-list {
+    .layout {
+        width: 100%;
+        max-width: 1024px;
+        margin: auto;
+        .game {
+            transition: 0.4s;
+        }
+        .not_available {
+            opacity: 0.5;
+        }
+    }
+}
