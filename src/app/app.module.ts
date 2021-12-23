@@ -3,7 +3,6 @@ const uiRouter = require('@uirouter/angularjs');
 require('angular-resource');
 import angularUiBootstrap from 'angular-ui-bootstrap';
 //Components
-import './component/general/general.module';
 import './component/mainMenu/mainMenu.module';
 import './component/player/player.module';
 import './component/playersList/playersList.module';
@@ -27,7 +26,6 @@ angular.module('app', [
     angularUiBootstrap,
     uiRouter.default,
     //Components
-    'general',
     'mainMenu',
     'player',
     'playersList',
