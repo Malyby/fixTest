@@ -1,27 +1,25 @@
-import angular from "angular";
+import angular from 'angular';
 
 angular.
   module('app')
-  .config(function($stateProvider, $locationProvider) {  
+  .config(function($stateProvider, $locationProvider, $urlRouterProvider) {  
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
-    $stateProvider.state('main', {
-      url: "/",
-      component: "general"
-    });
-    $stateProvider.state('players', {
-      url: "/players",
-      component: "playersList"
-    });
-    $stateProvider.state('games', {
-      url: "/games",
-      component: "gamesList"
-    });
-    $stateProvider.state('player', {
-      url: '/players/{id}',
-      component: "player"
-    });
+    $stateProvider
+      .state('players', {
+        url: '/players',
+        component: 'playersList'
+      })
+      .state('games', {
+        url: '/games',
+        component: 'gamesList'
+      })
+      .state('player', {
+        url: '/players/{id}',
+        component: 'player'
+      })
+    $urlRouterProvider.otherwise('/players')
   })
 

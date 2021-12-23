@@ -2,7 +2,6 @@
 @import "./app/component/createPlayer/createPlayer.scss";
 @import "./app/component/editPlayer/editPlayer.scss";
 @import "./app/component/gamesList/gamesList.scss";
-@import "./app/component/general/general.scss";
 @import "./app/component/mainMenu/mainMenu.scss";
 @import "./app/component/player/player.scss";
 @import "./app/component/playersList/playersList.scss";
@@ -15,10 +14,6 @@
 body {
     overflow-x: hidden;
     margin: 20px;
-    .btn-link {
-        color: #212529!important;
-
-    }
 }
 .modal-header {
     display: flex;

@@ -22,14 +22,11 @@
         transition: 0.4s;
         text-decoration: none;
         color: var(--text-dark);
-        .card-title {
-            color: var(--text-light);
-        }
         .list-group-item {
             background-color: var(--background-light);
         }
     }
     .player:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 }

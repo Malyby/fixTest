@@ -1,18 +1,15 @@
 {
   "players": [
     {
-      "id": 1,
       "nickname": "Malyby1123123",
-      "age": 32,
+      "age": "12",
       "phone": "+71999999993",
       "email": "ma@ma1.ru",
       "platform": "PC",
       "games_id": [
-        5,
-        10,
-        1,
-        9
-      ]
+        1
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -257,6 +254,15 @@
       "email": "test@test.ru",
       "platform": "PC",
       "games_id": []
+    },
+    {
+      "nickname": "test3",
+      "age": 3,
+      "phone": "+79847576767",
+      "email": "test@t3123est.ru",
+      "platform": "PS",
+      "games_id": [],
+      "id": 27
     }
   ],
   "games": [

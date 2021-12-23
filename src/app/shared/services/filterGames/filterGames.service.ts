@@ -16,13 +16,13 @@
 
             this.checkDateRelease = function(data_release) {
                 const current_date = new Date().getTime();
-                if (data_release > current_date) {
+                if (data_release >= current_date) {
                     return false;
                 }
                 return true;
             }
             this.checkAgeLimit = function(game_rating, player_age) {
-                if (relationGameRating[game_rating] > player_age) {
+                if (relationGameRating[game_rating] >= player_age) {
                     return false;
                 }
                 return true;
